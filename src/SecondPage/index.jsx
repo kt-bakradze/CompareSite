@@ -1,56 +1,66 @@
-import classes from './index.module.scss'
-import React, { useState, useEffect } from 'react'
-import items from '../inv.json'
+import classes from "./index.module.scss";
+import React from "react";
+import items from "../inv.json";
 
-export default function CompareContent(){
-    return(
-        <div className={classes.secondPageBody}>
-            <div className={classes.logo}>
-                <img src="Frame566.svg" />
-            </div>
-            <div className={classes.pageContainer}>
-                <div className={classes.comparePhotos}>
-                    {
-                        items && items.map(item =>{
-                            if (item.VIN === "1FTEW1EG3HFB49446" ){
-                                return <img src={item.PhotoURL} key={item.VIN}/>
-                            }
-                            if (item.VIN === "JM1GL1VM0L1515909" ){
-                                return (
-                                    <div className={classes.firstCar}>
-                                        <img src={item.PhotoURL}/>
-                                        <div className={classes.vs}>
-                                            <div></div>
-                                            <span>vs</span>
-                                            <div></div>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        })
-                    }
-                </div>
-                <p className={classes.centerPad}>66 FACTS IN COMPARISION</p>
-                <div className={classes.titleBody}>
-                    {
-                        items && items.map(item =>{
-                            if (item.VIN === "JM1GL1VM0L1515909" ){
-                                return (
-                                    <div className={classes.firstCar}>
-                                        <h2>{item.Make +" "+item.Model+" "+ (item.Year)}</h2>
-                                        <p>vs</p>
-                                    </div>
-                                )
-                            }
-                            if (item.VIN === "1FTEW1EG3HFB49446" ){
-                                return (
-                                    <h2>{item.Make +" "+item.Model+" "+ (item.Year)}</h2>
-                                )
-                            }
-                        })
-                    }
-                </div>
-            </div>
-        </div> 
-    )
+export default function CompareContent() {
+	const staticVehicle = items.filter((e) => e.VIN === "JM1GL1VM0L1515909")[0];
+	const selectedVehicle = window.selectedVehicle || staticVehicle;
+
+	const statisticKeys = ["IsNew", "VIN"];
+
+	console.log(Object.keys(staticVehicle));
+	return (
+		<div className={classes.secondPageBody}>
+			<div className={classes.logo}>
+				<img src="Frame566.svg" alt="logo" />
+			</div>
+			<div className={classes.pageContainer}>
+				<div className={classes.comparePhotos}>
+					<div className={classes.firstCar}>
+						<img src={staticVehicle.PhotoURL} alt="static vehicle" />
+						<div className={classes.vs}>
+							<div></div>
+							<span>vs</span>
+							<div></div>
+						</div>
+						<img src={selectedVehicle.PhotoURL} alt="selected vehicle" />
+					</div>
+				</div>
+				<p className={classes.centerPad}>66 FACTS IN COMPARISON</p>
+				<div className={classes.titleBody}>
+					<div className={classes.firstCar}>
+						<h2>
+							{staticVehicle.Make +
+								" " +
+								staticVehicle.Model +
+								" " +
+								staticVehicle.Year}
+						</h2>
+						<p>vs</p>
+						<h2>
+							{selectedVehicle.Make +
+								" " +
+								selectedVehicle.Model +
+								" " +
+								selectedVehicle.Year}
+						</h2>
+					</div>
+				</div>
+				<div className={classes.vehicleStatistics}>
+					{statisticKeys.map((stat) => {
+						return (
+							<div className={classes.vehicleStat} key={stat}>
+								<div className={classes.statName}>
+									<p>{stat}</p>
+								</div>
+								<div>{staticVehicle[stat] || ""}</div>
+                                <div className={classes.divider}></div>
+								<div>{selectedVehicle[stat] || ""}</div>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		</div>
+	);
 }

@@ -1,43 +1,77 @@
-.comparePhotos{
-    padding-top: 5vh;
-    width: 60vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    img{
-        border-radius: 0.3vh;
-        width: 25vw;
-        height: 22vh;
-    }
-    .vs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        div {
-            height: 50px;
-            border-left: 1px solid #fff;
+.comparePhotos {
+	padding-top: 5vh;
+	width: 60vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	img {
+		border-radius: 0.3vh;
+		width: 25vw;
+		height: 22vh;
+	}
+	.vs {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		div {
+			height: 50px;
+			border-left: 1px solid #fff;
+		}
+	}
+}
+
+.firstCar {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1rem;
+	p {
+		padding-top: 0.7vh;
+	}
+}
+
+.titleBody {
+	display: flex;
+	justify-content: space-around;
+}
+
+.centerPad {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 3vh;
+}
+
+.vehicleStatistics {
+    margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	.vehicleStat {
+		border: 1px solid #fff;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+        .divider{
+            flex-grow: 0;
+            background-color: #fff;
+            padding-inline: 1px;
+            height: 100%;
         }
-    }
-}
-
-.firstCar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    p{
-        padding-top: 0.7vh;
-    }
-}
-
-.titleBody{
-    display: flex;
-    justify-content: space-around;
-}
-
-.centerPad{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3vh;
+		.statName {
+			background-color: #fff;
+			border-radius: 20px;
+			color: black;
+		}
+		* {
+			flex: 1 1 0%;
+			text-align: center;
+			padding-block: 1rem;
+		}
+	}
 }
