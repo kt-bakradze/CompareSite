@@ -1,24 +1,19 @@
 import classes from './index.module.scss'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import items from '../inv.json'
-
-// let { secondCarVin } = useParams();
-// const [secondCar, setSecondCar] = useState();
-
-//   useEffect(() => {
-//     setSecondCar(items.filter((item) => item.VIN === secondCarVin));
-//   }, [secondCarVin]);
 
 export default function CompareContent(){
     return(
         <div className={classes.secondPageBody}>
-            <div className={classes.logo}></div>
+            <div className={classes.logo}>
+                <img src="Frame566.svg" />
+            </div>
             <div className={classes.pageContainer}>
                 <div className={classes.comparePhotos}>
                     {
                         items && items.map(item =>{
                             if (item.VIN === "1FTEW1EG3HFB49446" ){
-                                return <img src={item.PhotoURL}/>
+                                return <img src={item.PhotoURL} key={item.VIN}/>
                             }
                             if (item.VIN === "JM1GL1VM0L1515909" ){
                                 return (
