@@ -2,6 +2,13 @@ import classes from './index.module.scss'
 import React from 'react'
 import items from '../inv.json'
 
+// let { secondCarVin } = useParams();
+// const [secondCar, setSecondCar] = useState();
+
+//   useEffect(() => {
+//     setSecondCar(items.filter((item) => item.VIN === secondCarVin));
+//   }, [secondCarVin]);
+
 export default function CompareContent(){
     return(
         <div className={classes.secondPageBody}>
@@ -10,10 +17,10 @@ export default function CompareContent(){
                 <div className={classes.comparePhotos}>
                     {
                         items && items.map(item =>{
-                            if (item.VIN == "1FTEW1EG3HFB49446" ){
+                            if (item.VIN === "1FTEW1EG3HFB49446" ){
                                 return <img src={item.PhotoURL}/>
                             }
-                            if (item.VIN == "JM1GL1VM0L1515909" ){
+                            if (item.VIN === "JM1GL1VM0L1515909" ){
                                 return (
                                     <div className={classes.firstCar}>
                                         <img src={item.PhotoURL}/>
@@ -32,7 +39,7 @@ export default function CompareContent(){
                 <div className={classes.titleBody}>
                     {
                         items && items.map(item =>{
-                            if (item.VIN == "JM1GL1VM0L1515909" ){
+                            if (item.VIN === "JM1GL1VM0L1515909" ){
                                 return (
                                     <div className={classes.firstCar}>
                                         <h2>{item.Make +" "+item.Model+" "+ (item.Year)}</h2>
@@ -40,7 +47,7 @@ export default function CompareContent(){
                                     </div>
                                 )
                             }
-                            if (item.VIN == "1FTEW1EG3HFB49446" ){
+                            if (item.VIN === "1FTEW1EG3HFB49446" ){
                                 return (
                                     <h2>{item.Make +" "+item.Model+" "+ (item.Year)}</h2>
                                 )

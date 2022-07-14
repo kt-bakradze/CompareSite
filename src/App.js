@@ -7,8 +7,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path='' element={<Search />}/>
-        <Route exact path='/compare' element={<CompareContent />}/>
+        <Route exact path='/' element={<Search />}/>
+        <Route exact path='compare' element={<CompareContent />}/>
       </Routes>
     </Router>  
   );

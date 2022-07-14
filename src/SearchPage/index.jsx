@@ -14,6 +14,7 @@ export default function SeachPage(){
     let history = useNavigate()
 	return (
         <div className={classes.SearchBody}>
+            <img src="Group36.svg"/>
             <h2 className={classes.title}>IMPEL</h2>
             <div className={classes.centerContent}>         
                 <Typography variant="h3" align="center" pt={"11vh"}>COMPARE VEHICLE</Typography>
@@ -73,7 +74,7 @@ export default function SeachPage(){
                 {/* <input type='text' placeholder='Vhicle default' className='vhicleDefault vhicleSearch'/> */}
                 {/* <input type='text' placeholder='Vhicle default' className='vhicleSecond vhicleSearch'/> */}
                 <div className={classes.inputContainer + " " + classes.compareContainer}>
-                    <button style={{cursor: 'pointer', }} onClick={()=> {history("/compare")}}>Compare</button>
+                    <button style={{cursor: 'pointer'}} onClick={()=> {history('compare')}}>Compare</button>
                 </div>
             </div>
         </div>
