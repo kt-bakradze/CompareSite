@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9747ff;
+  color: #ffffff;
+}
+
+input, button {
+  font-family: 'Roboto';
+}
