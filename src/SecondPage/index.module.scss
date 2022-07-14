@@ -5,9 +5,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 	img {
-		border-radius: 0.3vh;
-		width: 25vw;
-		height: 22vh;
+		border-radius: 2vh;
+		width: 23vw;
+		height: 30vh;
 	}
 	.vs {
 		display: flex;
@@ -15,7 +15,7 @@
 		align-items: center;
 		justify-content: center;
 		div {
-			height: 50px;
+			height: 13.5vh;
 			border-left: 1px solid #fff;
 		}
 	}
@@ -49,6 +49,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+	padding: 0 8vw 7vh 8vw;
 
 	.vehicleStat {
 		border: 1px solid #fff;
@@ -71,7 +72,14 @@
 		* {
 			flex: 1 1 0%;
 			text-align: center;
-			padding-block: 1rem;
+			padding-block: 0.5rem;
 		}
 	}
+}
+
+.logo{
+	position:absolute;
+	left:0;
+	margin:5vh 0vh 0vh 14vw;
+	cursor: pointer;
 }

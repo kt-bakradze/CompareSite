@@ -46,6 +46,12 @@
         width: 100%;
         > div {
             padding: 0 !important;
+            >div{
+                padding: 0 !important;
+                >input{
+                    padding: 0 !important;
+                }
+            }
         }
     }
     input {

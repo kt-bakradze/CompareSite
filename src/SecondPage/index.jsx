@@ -1,18 +1,20 @@
 import classes from "./index.module.scss";
 import React from "react";
 import items from "../inv.json";
+import { useNavigate } from "react-router-dom";
+
 
 export default function CompareContent() {
 	const staticVehicle = items.filter((e) => e.VIN === "JM1GL1VM0L1515909")[0];
 	const selectedVehicle = window.selectedVehicle || staticVehicle;
-
-	const statisticKeys = ["IsNew", "VIN"];
+	let history = useNavigate();
+	const statisticKeys = ["SpecialPrice", "FuelType", "BodyStyle", "Exteriorcolor", "Interiorcolor", "Transmission", "DoorCount", "Mileage", "Engine", "Drivetrain", "Cylinders", "CityMPG", "HwyMPG", "Interiormaterial"];
 
 	console.log(Object.keys(staticVehicle));
 	return (
 		<div className={classes.secondPageBody}>
 			<div className={classes.logo}>
-				<img src="Frame566.svg" alt="logo" />
+				<img src="Frame566.svg" alt="logo" onClick={()=>{history("/")}}/>
 			</div>
 			<div className={classes.pageContainer}>
 				<div className={classes.comparePhotos}>
@@ -26,7 +28,7 @@ export default function CompareContent() {
 						<img src={selectedVehicle.PhotoURL} alt="selected vehicle" />
 					</div>
 				</div>
-				<p className={classes.centerPad}>66 FACTS IN COMPARISON</p>
+				<p className={classes.centerPad}>14 FACTS IN COMPARISON</p>
 				<div className={classes.titleBody}>
 					<div className={classes.firstCar}>
 						<h2>
